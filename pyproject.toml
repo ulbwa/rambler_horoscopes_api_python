@@ -1,10 +1,13 @@
 [tool.poetry]
 name = "rambler_horoscopes"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["ульба <ulbwa@icloud.com>"]
 readme = "README.md"
-packages = [{include = "rabler_horoscopes"}]
+homepage = "https://github.com/ulbwa/rabler_horoscopes_api_python"
+repository = "https://github.com/ulbwa/rabler_horoscopes_api_python"
+include = ["LICENSE"]
+packages = [{ include = "rabler_horoscopes" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
