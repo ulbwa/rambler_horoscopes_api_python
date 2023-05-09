@@ -84,7 +84,7 @@ class RamblerHoroscopes:
             response = await client.send(request)
             return orjson.loads(response.content)
 
-    async def zodiac_info(self, zodiac: ZodiacEnum):
+    async def get_zodiac(self, zodiac: ZodiacEnum):
         """
         Returns a Zodiac object that contains the information about the given zodiac sign.
 
@@ -230,7 +230,9 @@ class RamblerHoroscopes:
         )
         output = [HoroscopePeriod.TODAY]
         for bubble in data["content"]["bubbles"]["list"]:
-            horoscope_period = bubble["link"].split("/")[3]
+            horoscope_period = bubble["link"].split("/")[
+                3 if horoscope_type != HoroscopeType.GENERAL else 2
+            ]
             if horoscope_period in list(HoroscopePeriod):
                 output.append(HoroscopePeriod(horoscope_period))
         return sorted(output, key=lambda e: list(HoroscopePeriod).index(e))
