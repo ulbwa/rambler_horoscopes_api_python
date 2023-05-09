@@ -232,3 +232,31 @@ class HoroscopePeriod(str, Enum):
     TOMORROW = "tomorrow"
     WEEKLY = "weekly"
     MONTHLY = "monthly"
+
+    def get_name(self) -> str:  # pylint:disable=too-many-return-statements
+        """
+        Returns the name of the horoscope period in Russian.
+
+        This method uses a match statement to check the value of the enum member
+        and returns the corresponding name as a string. If the value is not a valid
+        member of the enum, it raises a ValueError.
+
+        Returns:
+            The name of the horoscope period in Russian.
+
+        Raises:
+            ValueError: If self is not a valid HoroscopePeriod member.
+        """
+        match self:
+            case HoroscopePeriod.YESTERDAY:
+                return "Вчера"
+            case HoroscopePeriod.TODAY:
+                return "Сегодня"
+            case HoroscopePeriod.TOMORROW:
+                return "Завтра"
+            case HoroscopePeriod.WEEKLY:
+                return "Недельный"
+            case HoroscopePeriod.MONTHLY:
+                return "Месячный"
+            case _:
+                raise ValueError(f"Invalid HoroscopePeriod member: {self}")
