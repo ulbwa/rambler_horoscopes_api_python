@@ -108,7 +108,7 @@ class RamblerHoroscopes:
         for content in data["content"]["text"]:
             if content["type"] != "paragraph":
                 break
-            if not hasattr(output_dicted, "description"):
+            if output_dicted.get("description") is None:
                 output_dicted["description"] = str()
             output_dicted["description"] += content["content"] + "\n"
         if output_dicted.get("description") is not None:
@@ -276,7 +276,7 @@ class RamblerHoroscopes:
         for content in data["content"]["text"]:
             if content["type"] != "paragraph":
                 break
-            if not hasattr(output_dicted, "text"):
+            if output_dicted.get("text") is None:
                 output_dicted["text"] = str()
             output_dicted["text"] += content["content"] + "\n"
         if output_dicted.get("text") is not None:

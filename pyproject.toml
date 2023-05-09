@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rambler_horoscopes"
-version = "0.1.4"
+version = "0.1.5"
 description = ""
 authors = ["ульба <ulbwa@icloud.com>"]
 readme = "README.md"
