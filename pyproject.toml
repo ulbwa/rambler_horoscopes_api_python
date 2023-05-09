@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "rambler-horoscopes"
+name = "rambler_horoscopes"
 version = "0.1.1"
 description = ""
 authors = ["ульба <ulbwa@icloud.com>"]
