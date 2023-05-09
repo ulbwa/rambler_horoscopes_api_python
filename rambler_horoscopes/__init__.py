@@ -263,7 +263,13 @@ class RamblerHoroscopes:
 
         data = await self._make_request(
             method=RequestMethod.GET,
-            url=self.api_url + horoscope_type.value + "/" + zodiac.value + "/today/",
+            url=self.api_url
+            + horoscope_type.value
+            + "/"
+            + zodiac.value
+            + "/"
+            + period.value
+            + "/",
         )
         output_dicted = {"zodiac": zodiac, "type": horoscope_type, "period": period}
 
